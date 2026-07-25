@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espelho Espelho Meu</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Espelho Espelho Meu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-    <h1>
-        Espelho, espelho meu,<br>
-        existe alguém que implementa mais bug do que eu?
-    </h1>
+<div id="particles"></div>
 
-    <div class="espelho">
-        <video id="camera" autoplay playsinline></video>
-    </div>
+<div class="container">
 
-    <script src="script.js"></script>
+    <section class="texto">
+
+        <div class="ornamento"></div>
+
+        <h1>
+            Espelho,<br>
+            espelho meu,<br><br>
+
+            existe alguém<br>
+            que implementa<br>
+            mais bug do<br>
+            que eu?
+        </h1>
+
+        <div class="ornamento"></div>
+
+    </section>
+
+
+    <section class="espelho">
+
+        <video
+            id="camera"
+            autoplay
+            muted
+            playsinline>
+        </video>
+
+        <img
+            class="moldura"
+            src="espelho1.png">
+
+    </section>
+
+</div>
+
+
+<div class="resposta">
+
+🔥 Infelizmente sim...
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
