@@ -24,302 +24,374 @@ body{
 
 }
 
-/* fundo */
+/* ========================================================= */
+/* FUNDO */
+/* ========================================================= */
 
 body::before{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:
+    background:
 
-radial-gradient(circle at 20% 20%,rgba(0,120,255,.35),transparent 40%),
+        radial-gradient(circle at 20% 20%,rgba(0,120,255,.35),transparent 40%),
 
-radial-gradient(circle at 80% 80%,rgba(0,80,255,.30),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(0,80,255,.30),transparent 30%),
 
-linear-gradient(#000814,#02030d);
+        linear-gradient(#000814,#02030d);
 
-animation:fundo 8s linear infinite alternate;
+    animation:fundo 8s linear infinite alternate;
 
-z-index:-3;
+    z-index:-3;
 
 }
 
 @keyframes fundo{
 
-to{
+    to{
 
-filter:hue-rotate(20deg);
+        filter:hue-rotate(20deg);
+
+    }
 
 }
-
-}
-
-/* chamas */
 
 body::after{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:
+    background:
 
-url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 
-opacity:.2;
+    opacity:.2;
 
-mix-blend-mode:screen;
+    mix-blend-mode:screen;
 
-z-index:-2;
+    z-index:-2;
 
 }
 
-/* layout */
+/* ========================================================= */
+/* LAYOUT */
+/* ========================================================= */
 
 .container{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:80px;
+    justify-content:center;
 
-width:min(1400px,95%);
+    gap:90px;
+
+    width:min(1500px,95%);
 
 }
 
 .texto{
 
-width:40%;
+    width:42%;
 
 }
 
 .texto h1{
 
-font-size:3rem;
+    font-size:3rem;
 
-font-weight:600;
+    line-height:1.45;
 
-line-height:1.4;
+    color:#f2d47d;
 
-color:#f2d47d;
+    font-weight:600;
 
-text-shadow:
+    text-shadow:
 
-0 0 10px rgba(255,220,120,.8),
+        0 0 10px rgba(255,220,120,.8),
 
-0 0 25px rgba(255,220,120,.3);
+        0 0 25px rgba(255,220,120,.35);
 
 }
 
 .ornamento{
 
-height:2px;
+    height:2px;
 
-margin:30px 0;
+    margin:30px 0;
 
-background:linear-gradient(90deg,transparent,#7ec8ff,transparent);
+    background:
 
-box-shadow:0 0 20px #49a9ff;
+    linear-gradient(90deg,
+
+    transparent,
+
+    #7ec8ff,
+
+    transparent);
+
+    box-shadow:0 0 20px #49a9ff;
 
 }
 
-/* espelho */
+/* ========================================================= */
+/* ESPELHO */
+/* ========================================================= */
 
 .espelho{
 
-position:relative;
+    position:relative;
 
-width:480px;
+    width:min(34vw,430px);
 
-height:700px;
+    aspect-ratio:563 / 1024;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
-
-}
-
-/* vídeo */
-
-video{
-
-position:absolute;
-
-width:285px;
-
-height:440px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-transform:scaleX(-1);
-
-filter:
-
-contrast(1.05)
-
-brightness(1.1)
-
-saturate(1.1);
+    align-items:center;
 
 }
 
-/* moldura */
+/* Webcam */
+
+#camera{
+
+    position:absolute;
+
+    width:48%;
+
+    height:31%;
+
+    left:26%;
+
+    top:10%;
+
+    object-fit:cover;
+
+    transform:scaleX(-1);
+
+    border-radius:50%;
+
+    filter:
+
+        brightness(1.08)
+
+        contrast(1.05)
+
+        saturate(1.1);
+
+    z-index:1;
+
+}
+
+/* Moldura */
 
 .moldura{
 
-position:absolute;
+    position:absolute;
 
-width:100%;
+    inset:0;
 
-z-index:5;
+    width:100%;
 
-pointer-events:none;
+    height:100%;
 
-filter:
+    object-fit:contain;
 
-drop-shadow(0 0 25px rgba(255,220,120,.6));
+    pointer-events:none;
+
+    z-index:5;
+
+    animation:brilho 5s ease-in-out infinite;
 
 }
 
-/* resposta */
+@keyframes brilho{
+
+    0%,100%{
+
+        filter:
+
+        drop-shadow(0 0 12px rgba(255,210,60,.30));
+
+    }
+
+    50%{
+
+        filter:
+
+        drop-shadow(0 0 28px rgba(255,215,0,.85))
+
+        drop-shadow(0 0 45px rgba(255,180,50,.45));
+
+    }
+
+}
+
+/* ========================================================= */
+/* RESPOSTA */
+/* ========================================================= */
 
 .resposta{
 
-position:absolute;
+    position:absolute;
 
-bottom:40px;
+    bottom:35px;
 
-left:50%;
+    left:50%;
 
-transform:translateX(-50%);
+    transform:translateX(-50%);
 
-padding:18px 50px;
+    padding:18px 55px;
 
-border:2px solid #b98d2d;
+    border:2px solid #b98d2d;
 
-border-radius:18px;
+    border-radius:18px;
 
-background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
-font-size:30px;
+    color:#ffe7a0;
 
-color:#ffe7a0;
+    font-size:30px;
 
-box-shadow:
+    box-shadow:
 
-0 0 30px rgba(0,160,255,.4);
+        0 0 25px rgba(0,150,255,.35);
 
 }
 
-/* partículas */
+/* ========================================================= */
+/* PARTÍCULAS */
+/* ========================================================= */
 
 #particles{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-pointer-events:none;
+    overflow:hidden;
 
-overflow:hidden;
+    pointer-events:none;
 
 }
 
 .particula{
 
-position:absolute;
+    position:absolute;
 
-width:4px;
+    width:4px;
 
-height:4px;
+    height:4px;
 
-background:#4ebcff;
+    border-radius:50%;
 
-border-radius:50%;
+    background:#4ebcff;
 
-box-shadow:0 0 15px #44b7ff;
+    box-shadow:
 
-animation:subir linear infinite;
+        0 0 15px #44b7ff,
+
+        0 0 30px #44b7ff;
+
+    animation:subir linear infinite;
 
 }
 
 @keyframes subir{
 
-from{
+    from{
 
-transform:translateY(110vh);
+        transform:translateY(110vh);
 
-opacity:0;
+        opacity:0;
 
-}
+    }
 
-20%{
+    20%{
 
-opacity:1;
+        opacity:1;
 
-}
+    }
 
-to{
+    to{
 
-transform:translateY(-10vh);
+        transform:translateY(-10vh);
 
-opacity:0;
+        opacity:0;
 
-}
-
-}
-
-@media(max-width:1000px){
-
-.container{
-
-flex-direction:column;
-
-gap:20px;
+    }
 
 }
 
-.texto{
+/* ========================================================= */
+/* RESPONSIVO */
+/* ========================================================= */
 
-width:100%;
+@media (max-width:1100px){
 
-text-align:center;
+    .container{
 
-}
+        flex-direction:column;
 
-.texto h1{
+        gap:25px;
 
-font-size:2rem;
+    }
 
-}
+    .texto{
 
-.espelho{
+        width:100%;
 
-width:320px;
+        text-align:center;
 
-height:500px;
+    }
 
-}
+    .texto h1{
 
-video{
+        font-size:2rem;
 
-width:190px;
+    }
 
-height:300px;
+    .espelho{
 
-}
+        width:min(70vw,340px);
+
+    }
+
+    #camera{
+
+        width:48%;
+
+        height:31%;
+
+        left:26%;
+
+        top:10%;
+
+    }
+
+    .resposta{
+
+        width:90%;
+
+        text-align:center;
+
+        font-size:22px;
+
+        padding:16px;
+
+    }
 
 }
